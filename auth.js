@@ -4,15 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!header) return;
 
-  // Find existing login button or avatar container
-  let authContainer = header.querySelector('.login-btn, .user-avatar-container');
+  // Search for any existing login button, avatar container, or standalone avatar
+  let authContainer = header.querySelector('.login-btn, .user-avatar-container, .user-avatar');
 
   if (currentUser) {
     // USER IS LOGGED IN
     const firstName = (currentUser.name || 'User').split(' ')[0];
     const initial = firstName.charAt(0).toUpperCase();
 
-    // Create avatar HTML with dropdown
     const avatarHTML = `
       <div class="user-avatar-container" style="position: relative; cursor: pointer;">
         <div class="user-avatar" id="globalAvatar">${initial}</div>
