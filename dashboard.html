@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière Spa - Member Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <a href="index.html" class="logo">LUMIÈRE SPA</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="book.html">Book</a>
+    </nav>
+    <div class="user-avatar">S</div>
+  </header>
+
+  <div class="dashboard-layout">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="member-info">
+        <h3>Member Hub</h3>
+        <span class="badge-tier">Gold Tier Loyalty</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#" class="active"><span>📊</span> Dashboard</a>
+        <a href="#"><span>📅</span> Bookings</a>
+        <a href="#"><span>🤍</span> Wishlist</a>
+        <a href="#"><span>👤</span> Profile</a>
+        <a href="#"><span>⚙️</span> Settings</a>
+      </nav>
+
+      <div class="points-card">
+        <span class="points-label">CURRENT POINTS</span>
+        <h2>2,450</h2>
+        <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+        <p>550 points to Diamond</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="dashboard-main">
+      
+      <div class="welcome-banner">
+        <h1>Welcome back, Sophia</h1>
+        <p>Today is a perfect day for restoration.</p>
+      </div>
+
+      <!-- TOP CARDS ROW -->
+      <div class="dash-top-grid">
+        
+        <!-- NEXT APPOINTMENT -->
+        <div class="appointment-card">
+          <span class="sub-tag">• NEXT APPOINTMENT</span>
+          <h2>Hair Styling</h2>
+          <p class="dash-date">📅 July 25, 2024</p>
+          <p class="dash-time">⏰ 10:00 AM — 11:30 AM</p>
+          <p class="dash-stylist">🪪 Master Stylist: Julianne</p>
+          
+          <div class="card-actions">
+            <button class="btn-outline">Reschedule</button>
+            <button class="btn-dark">Cancel</button>
+          </div>
+        </div>
+
+        <!-- ACTIVE OFFER -->
+        <div class="promo-card">
+          <span class="badge-light">Active Offer</span>
+          <p class="promo-sub">Next Visit Bonus</p>
+          <h3>20% off all Skin Rituals</h3>
+          <a href="#" class="claim-link">Claim Reward &rarr;</a>
+        </div>
+
+      </div>
+
+      <!-- RECENT SERVICES SECTION -->
+      <section class="dash-section">
+        <div class="section-header">
+          <div>
+            <h2>Recent Services</h2>
+            <p>Your history of luxury and care</p>
+          </div>
+          <a href="#" class="view-all">View All History</a>
+        </div>
+
+        <div class="history-grid">
+          <div class="history-card">
+            <div class="img-box">
+              <span class="date-badge">Jun 12, 2024</span>
+              <img src="image/massage.png" alt="Aromatherapy Massage">
+            </div>
+            <h4>Aromatherapy Massage</h4>
+            <p>60 min • Therapist: Elena</p>
+          </div>
+
+          <div class="history-card">
+            <div class="img-box">
+              <span class="date-badge">May 28, 2024</span>
+              <img src="image/spa.png" alt="Hydra-Radiance Facial">
+            </div>
+            <h4>Hydra-Radiance Facial</h4>
+            <p>75 min • Specialist: Marcus</p>
+          </div>
+
+          <div class="history-card">
+            <div class="img-box">
+              <span class="date-badge">May 05, 2024</span>
+              <img src="image/nails.png" alt="Lumière Manicure">
+            </div>
+            <h4>Lumière Manicure</h4>
+            <p>45 min • Artist: Sarah</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CURATED FOR YOU SECTION -->
+      <section class="dash-section">
+        <h2>Curated for You</h2>
+        <div class="curated-grid">
+          
+          <div class="product-card">
+            <img src="image/bottles.png" alt="Botanical Body Scrub">
+            <div class="p-info">
+              <h4>Botanical Body Scrub</h4>
+              <p>Perfect for maintaining your post-massage glow during the summer months.</p>
+              <button class="btn-gray">Book Now • $85</button>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <img src="image/view.png" alt="Vitamin C infusion">
+            <div class="p-info">
+              <h4>Vitamin C infusion</h4>
+              <p>An additive for your next facial to boost luminosity and repair sun damage.</p>
+              <button class="btn-gray">Add to Wishlist • $45</button>
+            </div>
+          </div>
+
+          <div class="gift-banner-card">
+            <div class="gift-icon">🎁</div>
+            <h3>Gift a Serene Moment</h3>
+            <p>Share the Lumière experience with someone special. Digital gift cards ready instantly.</p>
+            <button class="btn-gold">Buy Gift Card</button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
