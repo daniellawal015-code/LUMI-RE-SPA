@@ -1568,3 +1568,120 @@ header, .navbar {
     padding: 0.8rem 1rem;
   }
 }
+/* ==========================================
+   HAMBURGER & MOBILE DRAWER STYLES
+   ========================================== */
+
+/* Hidden on desktop */
+.mobile-sub-header,
+.sidebar-header-mobile,
+.menu-overlay {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  /* Top sub-bar for hamburger toggle */
+  .mobile-sub-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+    background: #f7f4ef;
+    border-bottom: 1px solid #eae6df;
+  }
+
+  .mobile-sub-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333;
+  }
+
+  /* Hamburger Icon */
+  .hamburger-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .hamburger-btn .bar {
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 2px;
+  }
+
+  /* Slide-out Sidebar Drawer */
+  .dashboard-sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 260px;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 2000;
+    padding: 1.5rem;
+    box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+  }
+
+  .dashboard-sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-header-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-header-mobile h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+  }
+
+  /* Dark Overlay when menu is open */
+  .menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 1500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Stack Main Content */
+  .dashboard-layout {
+    display: block;
+    padding: 1.2rem;
+  }
+
+  .dash-top-grid,
+  .curated-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
