@@ -1,1 +1,90 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière Spa - Create Account</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page-body">
+
+  <div class="login-card">
+    <a href="index.html" class="login-logo">LUMIÈRE SPA</a>
+    <h2>Create Account</h2>
+    <p>Join Lumière Rewards to access bespoke wellness experiences.</p>
+
+    <!-- Error/Success Message Box -->
+    <div id="signupAlert" class="alert-box" style="display: none;"></div>
+
+    <form id="signupForm">
+      <div class="input-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Sophia Carter" required>
+      </div>
+
+      <div class="input-group">
+        <label for="signupEmail">Email Address</label>
+        <!-- type="email" ensures valid email formatting -->
+        <input type="email" id="signupEmail" placeholder="sophia@example.com" required>
+      </div>
+
+      <div class="input-group">
+        <label for="signupPassword">Password</label>
+        <input type="password" id="signupPassword" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="submit-btn">Create Account</button>
+    </form>
+
+    <p class="signup-prompt">
+      Already have an account? <a href="login.html">Sign In</a>
+    </p>
+  </div>
+
+  <script>
+    const signupForm = document.getElementById('signupForm');
+    const alertBox = document.getElementById('signupAlert');
+
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('signupEmail').value.trim().toLowerCase();
+      const password = document.getElementById('signupPassword').value.trim();
+
+      // Basic regex check for valid email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showAlert('Please enter a valid, functioning email address.', 'error');
+        return;
+      }
+
+      // Retrieve existing users database from localStorage
+      let users = JSON.parse(localStorage.getItem('lumiere_users')) || [];
+
+      // Check if user already exists
+      const existingUser = users.find(u => u.email === email);
+      if (existingUser) {
+        showAlert('An account with this email already exists. Please sign in.', 'error');
+        return;
+      }
+
+      // Save new user
+      users.push({ name, email, password });
+      localStorage.setItem('lumiere_users', JSON.stringify(users));
+
+      showAlert('Account created successfully! Redirecting to login...', 'success');
+
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 1500);
+    });
+
+    function showAlert(msg, type) {
+      alertBox.textContent = msg;
+      alertBox.className = `alert-box ${type}`;
+      alertBox.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
