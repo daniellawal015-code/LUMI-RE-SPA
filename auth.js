@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!header) return;
 
-  // Search for any existing login button, avatar container, or standalone avatar
-  let authContainer = header.querySelector('.login-btn, .user-avatar-container, .user-avatar');
+  // Search for login link (by href), login classes, or existing avatar elements
+  let authContainer = header.querySelector('a[href*="login.html"], .login-btn, .user-avatar-container, .user-avatar');
 
   if (currentUser) {
     // USER IS LOGGED IN
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   } else {
     // USER IS LOGGED OUT
-    if (!authContainer || !authContainer.classList.contains('login-btn')) {
+    if (!authContainer || authContainer.classList.contains('user-avatar-container') || authContainer.classList.contains('user-avatar')) {
       const loginBtnHTML = `<a href="login.html" class="login-btn">Login</a>`;
       if (authContainer) {
         authContainer.outerHTML = loginBtnHTML;
