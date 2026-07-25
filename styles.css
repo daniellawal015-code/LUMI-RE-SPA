@@ -1267,3 +1267,121 @@ header, .navbar {
   font-weight: 600;
   cursor: pointer;
 }
+/* LOGIN PAGE STYLES */
+.login-page-body {
+  background-color: #faf8f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-logo {
+  font-family: serif;
+  font-size: 1.8rem;
+  color: #000;
+  text-decoration: none;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.login-card h2 {
+  font-family: serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-card p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #a38252;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  margin-bottom: 1.8rem;
+}
+
+.remember-me {
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.forgot-pass {
+  color: #a38252;
+  text-decoration: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.88;
+}
+
+.signup-prompt {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+}
+
+.signup-prompt a {
+  color: #a38252;
+  font-weight: 600;
+  text-decoration: none;
+}
