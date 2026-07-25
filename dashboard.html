@@ -17,7 +17,8 @@
       <a href="gallery.html">Gallery</a>
       <a href="book.html">Book</a>
     </nav>
-    <div class="user-avatar">S</div>
+    <!-- Dynamic Initial Avatar Circle -->
+    <div class="user-avatar" id="userAvatar">U</div>
   </header>
 
   <div class="dashboard-layout">
@@ -26,7 +27,7 @@
     <aside class="dashboard-sidebar">
       <div class="member-info">
         <h3>Member Hub</h3>
-        <span class="badge-tier">Gold Tier Loyalty</span>
+        <span class="badge-tier" id="userTier">Bronze Tier Loyalty</span>
       </div>
 
       <nav class="sidebar-menu">
@@ -37,45 +38,43 @@
         <a href="#"><span>⚙️</span> Settings</a>
       </nav>
 
+      <!-- DYNAMIC POINTS CARD -->
       <div class="points-card">
         <span class="points-label">CURRENT POINTS</span>
-        <h2>2,450</h2>
-        <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-        <p>550 points to Diamond</p>
+        <h2 id="userPoints">0</h2>
+        <div class="progress-bar"><div class="progress" id="pointsProgress" style="width: 0%;"></div></div>
+        <p id="pointsSubtext">500 points to Silver Tier</p>
       </div>
     </aside>
 
     <!-- MAIN CONTENT AREA -->
     <main class="dashboard-main">
       
+      <!-- DYNAMIC GREETING -->
       <div class="welcome-banner">
-        <h1>Welcome back, Sophia</h1>
+        <h1 id="welcomeHeading">Welcome back, User</h1>
         <p>Today is a perfect day for restoration.</p>
       </div>
 
       <!-- TOP CARDS ROW -->
       <div class="dash-top-grid">
         
-        <!-- NEXT APPOINTMENT -->
+        <!-- NEXT APPOINTMENT (Empty State for New User) -->
         <div class="appointment-card">
           <span class="sub-tag">• NEXT APPOINTMENT</span>
-          <h2>Hair Styling</h2>
-          <p class="dash-date">📅 July 25, 2024</p>
-          <p class="dash-time">⏰ 10:00 AM — 11:30 AM</p>
-          <p class="dash-stylist">🪪 Master Stylist: Julianne</p>
-          
-          <div class="card-actions">
-            <button class="btn-outline">Reschedule</button>
-            <button class="btn-dark">Cancel</button>
+          <div id="appointmentBox">
+            <h3 style="margin-top: 1rem; color: #666; font-weight: normal;">No upcoming appointments</h3>
+            <p style="font-size: 0.85rem; color: #888; margin-top: 0.4rem;">Book your first treatment to begin your wellness journey.</p>
+            <a href="book.html" class="btn-dark" style="display: inline-block; margin-top: 1rem; text-decoration: none;">Book Now</a>
           </div>
         </div>
 
         <!-- ACTIVE OFFER -->
         <div class="promo-card">
-          <span class="badge-light">Active Offer</span>
-          <p class="promo-sub">Next Visit Bonus</p>
-          <h3>20% off all Skin Rituals</h3>
-          <a href="#" class="claim-link">Claim Reward &rarr;</a>
+          <span class="badge-light">Welcome Offer</span>
+          <p class="promo-sub">First Visit Bonus</p>
+          <h3>15% off your first booking</h3>
+          <a href="book.html" class="claim-link">Book Treatment &rarr;</a>
         </div>
 
       </div>
@@ -90,32 +89,11 @@
           <a href="#" class="view-all">View All History</a>
         </div>
 
-        <div class="history-grid">
-          <div class="history-card">
-            <div class="img-box">
-              <span class="date-badge">Jun 12, 2024</span>
-              <img src="image/massage.png" alt="Aromatherapy Massage">
-            </div>
-            <h4>Aromatherapy Massage</h4>
-            <p>60 min • Therapist: Elena</p>
-          </div>
-
-          <div class="history-card">
-            <div class="img-box">
-              <span class="date-badge">May 28, 2024</span>
-              <img src="image/spa.png" alt="Hydra-Radiance Facial">
-            </div>
-            <h4>Hydra-Radiance Facial</h4>
-            <p>75 min • Specialist: Marcus</p>
-          </div>
-
-          <div class="history-card">
-            <div class="img-box">
-              <span class="date-badge">May 05, 2024</span>
-              <img src="image/nails.png" alt="Lumière Manicure">
-            </div>
-            <h4>Lumière Manicure</h4>
-            <p>45 min • Artist: Sarah</p>
+        <!-- DYNAMIC RECENT SERVICES BOX -->
+        <div id="historyContainer">
+          <div class="empty-history-box">
+            <p><strong>No recent services yet.</strong></p>
+            <p>Once you complete a service at Lumière Spa, your treatment history and care details will appear here.</p>
           </div>
         </div>
       </section>
@@ -157,6 +135,31 @@
 
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Load logged in user data on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const currentUser = JSON.parse(localStorage.getItem('lumiere_current_user'));
+
+      if (!currentUser) {
+        // If no user is logged in, redirect to login page
+        window.location.href = 'login.html';
+        return;
+      }
+
+      // Extract First Name for Greeting
+      const fullName = currentUser.name || "Valued Guest";
+      const firstName = fullName.split(' ')[0];
+      const initial = firstName.charAt(0).toUpperCase();
+
+      // 1. Update Greeting & Initial Avatar
+      document.getElementById('welcomeHeading').textContent = `Welcome back, ${firstName}`;
+      document.getElementById('userAvatar').textContent = initial;
+
+      // 2. Set Bronze Tier and 0 Points for fresh accounts
+      document.getElementById('userTier').textContent = currentUser.tier || "Bronze Tier Loyalty";
+      document.getElementById('userPoints').textContent = currentUser.points || 0;
+      document.getElementById('pointsProgress').style.width = (currentUser.points || 0) + '%';
+    });
+  </script>
 </body>
 </html>
