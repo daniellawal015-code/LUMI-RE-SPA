@@ -1501,3 +1501,70 @@ header, .navbar {
 .avatar-dropdown a:hover {
   color: #a38252;
 }
+/* ==========================================
+   MOBILE & TABLET RESPONSIVENESS (DASHBOARD)
+   ========================================== */
+
+@media screen and (max-width: 900px) {
+  
+  /* 1. Stack the dashboard layout vertically */
+  .dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  /* 2. Adjust Sidebar width and structure */
+  .dashboard-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  /* Make sidebar menu horizontal scrollable on mobile */
+  .sidebar-menu {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .sidebar-menu a {
+    flex: 0 0 auto;
+  }
+
+  /* Hide points card on mobile sidebar or make it full width */
+  .points-card {
+    width: 100%;
+  }
+
+  /* 3. Stack cards inside main dashboard content */
+  .dash-top-grid,
+  .curated-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  /* Adjust typography for mobile screens */
+  .welcome-banner h1 {
+    font-size: 1.6rem;
+  }
+
+  .appointment-card,
+  .promo-card,
+  .product-card {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Hide extra header nav links on tiny mobile screens if needed */
+  header .nav-links {
+    display: none; 
+  }
+  
+  header {
+    padding: 0.8rem 1rem;
+  }
+}

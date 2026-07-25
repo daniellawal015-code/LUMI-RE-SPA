@@ -20,12 +20,29 @@
     <a href="login.html" class="login-btn">Login</a>
   </header>
 
+  <!-- MOBILE HAMBURGER SUB-BAR (Visible only on mobile) -->
+  <div class="mobile-sub-header">
+    <button class="hamburger-btn" id="menuToggle" aria-label="Toggle Navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <span class="mobile-sub-title">Member Hub</span>
+  </div>
+
+  <!-- OVERLAY FOR MOBILE MENU -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
   <div class="dashboard-layout">
     
-    <!-- LEFT SIDEBAR -->
-    <aside class="dashboard-sidebar">
-      <div class="member-info">
+    <!-- SIDEBAR / MOBILE DRAWER -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+      <div class="sidebar-header-mobile">
         <h3>Member Hub</h3>
+        <button class="close-btn" id="closeSidebar">&times;</button>
+      </div>
+
+      <div class="member-info">
         <span class="badge-tier" id="userTier">Bronze Tier Loyalty</span>
       </div>
 
@@ -37,7 +54,7 @@
         <a href="#"><span>⚙️</span> Settings</a>
       </nav>
 
-      <!-- DYNAMIC POINTS CARD -->
+      <!-- POINTS CARD -->
       <div class="points-card">
         <span class="points-label">CURRENT POINTS</span>
         <h2 id="userPoints">0</h2>
@@ -49,7 +66,7 @@
     <!-- MAIN CONTENT AREA -->
     <main class="dashboard-main">
       
-      <!-- DYNAMIC GREETING -->
+      <!-- WELCOME BANNER (At the top on all screens) -->
       <div class="welcome-banner">
         <h1 id="welcomeHeading">Welcome back, User</h1>
         <p>Today is a perfect day for restoration.</p>
@@ -58,7 +75,7 @@
       <!-- TOP CARDS ROW -->
       <div class="dash-top-grid">
         
-        <!-- NEXT APPOINTMENT (Empty State for New User) -->
+        <!-- NEXT APPOINTMENT -->
         <div class="appointment-card">
           <span class="sub-tag">• NEXT APPOINTMENT</span>
           <div id="appointmentBox">
@@ -88,7 +105,6 @@
           <a href="#" class="view-all">View All History</a>
         </div>
 
-        <!-- DYNAMIC RECENT SERVICES BOX -->
         <div id="historyContainer">
           <div class="empty-history-box">
             <p><strong>No recent services yet.</strong></p>
@@ -134,13 +150,13 @@
 
   </div>
 
+  <script src="auth.js"></script>
   <script>
     // Load logged in user data on page load
     document.addEventListener('DOMContentLoaded', () => {
       const currentUser = JSON.parse(localStorage.getItem('lumiere_current_user'));
 
       if (!currentUser) {
-        // If no user is logged in, redirect to login page
         window.location.href = 'login.html';
         return;
       }
@@ -148,18 +164,33 @@
       // Extract First Name for Greeting
       const fullName = currentUser.name || "Valued Guest";
       const firstName = fullName.split(' ')[0];
-      const initial = firstName.charAt(0).toUpperCase();
 
-      // 1. Update Greeting & Initial Avatar
+      // Update Greeting & Stats
       document.getElementById('welcomeHeading').textContent = `Welcome back, ${firstName}`;
-      document.getElementById('userAvatar').textContent = initial;
-
-      // 2. Set Bronze Tier and 0 Points for fresh accounts
       document.getElementById('userTier').textContent = currentUser.tier || "Bronze Tier Loyalty";
       document.getElementById('userPoints').textContent = currentUser.points || 0;
       document.getElementById('pointsProgress').style.width = (currentUser.points || 0) + '%';
+
+      // --- HAMBURGER MENU TOGGLE LOGIC ---
+      const menuToggle = document.getElementById('menuToggle');
+      const closeSidebar = document.getElementById('closeSidebar');
+      const dashboardSidebar = document.getElementById('dashboardSidebar');
+      const menuOverlay = document.getElementById('menuOverlay');
+
+      function openMenu() {
+        dashboardSidebar.classList.add('open');
+        menuOverlay.classList.add('active');
+      }
+
+      function closeMenu() {
+        dashboardSidebar.classList.remove('open');
+        menuOverlay.classList.remove('active');
+      }
+
+      if (menuToggle) menuToggle.addEventListener('click', openMenu);
+      if (closeSidebar) closeSidebar.addEventListener('click', closeMenu);
+      if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
     });
   </script>
-  <script src="auth.js"></script>
 </body>
 </html>
