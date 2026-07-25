@@ -1405,3 +1405,33 @@ header, .navbar {
   color: #03543f;
   border: 1px solid #84e1bc;
 }
+/* USER AVATAR CIRCLE IN HEADER */
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+/* EMPTY HISTORY BOX STYLES */
+.empty-history-box {
+  background: #ffffff;
+  border: 1px dashed #dcd6cd;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: #666;
+}
+
+.empty-history-box p {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  color: #888;
+}
