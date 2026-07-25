@@ -949,3 +949,321 @@ header, .navbar {
   font-weight: 600;
   cursor: not-allowed;
 }
+/* DASHBOARD LAYOUT */
+.dashboard-layout {
+  display: flex;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 2rem 4%;
+  gap: 2.5rem;
+  background-color: #faf8f5;
+}
+
+/* SIDEBAR */
+.dashboard-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.badge-tier {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 1.8rem 0;
+}
+
+.sidebar-menu a {
+  text-decoration: none;
+  color: #555;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sidebar-menu a.active, 
+.sidebar-menu a:hover {
+  background-color: #eee9e0;
+  color: #000;
+  font-weight: 600;
+}
+
+.points-card {
+  background: #f0ebe1;
+  padding: 1.2rem;
+  border-radius: 12px;
+}
+
+.points-label {
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: #888;
+}
+
+.points-card h2 {
+  font-size: 1.8rem;
+  font-family: serif;
+  margin: 0.3rem 0;
+}
+
+.progress-bar {
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.progress {
+  height: 100%;
+  background: #a38252;
+  border-radius: 2px;
+}
+
+.points-card p {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* MAIN CONTENT */
+.dashboard-main {
+  flex: 1;
+}
+
+.welcome-banner h1 {
+  font-family: serif;
+  font-size: 2.3rem;
+}
+
+.welcome-banner p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.dash-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.appointment-card {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.sub-tag {
+  font-size: 0.7rem;
+  color: #a38252;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.appointment-card h2 {
+  font-family: serif;
+  font-size: 2rem;
+  margin: 0.4rem 0 1rem;
+}
+
+.dash-date, .dash-time, .dash-stylist {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.btn-outline {
+  border: 1px solid #ccc;
+  background: transparent;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-dark {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.promo-card {
+  background: #f2ede6;
+  padding: 1.8rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.badge-light {
+  font-size: 0.7rem;
+  background: #fff;
+  padding: 4px 8px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.promo-card h3 {
+  font-family: serif;
+  font-size: 1.4rem;
+}
+
+.claim-link {
+  color: #a38252;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+/* HISTORY GRID */
+.dash-section {
+  margin-bottom: 3rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  font-family: serif;
+  font-size: 1.6rem;
+}
+
+.view-all {
+  font-size: 0.8rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.history-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.img-box {
+  position: relative;
+}
+
+.date-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255,255,255,0.9);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.history-card h4 {
+  font-size: 0.95rem;
+  margin-top: 0.6rem;
+}
+
+.history-card p {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* CURATED GRID */
+.curated-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.product-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.p-info {
+  padding: 1rem;
+}
+
+.p-info h4 {
+  font-family: serif;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.p-info p {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.btn-gray {
+  width: 100%;
+  background: #eee9e0;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gift-banner-card {
+  background: #000;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gift-banner-card h3 {
+  font-family: serif;
+  font-size: 1.3rem;
+}
+
+.gift-banner-card p {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.btn-gold {
+  background: #e5a93b;
+  color: #000;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
