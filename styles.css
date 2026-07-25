@@ -280,10 +280,10 @@ img {
   cursor: pointer;
 }
 
-/* HOVER STATE: Brighten up to full color */
+/* Removes grayscale completely so original color shows when highlighted */
+.team-member img.active-card,
 .team-member img:hover {
-  filter: grayscale(0%) brightness(1.05); /* Full color & brightened */
-  transform: translateY(-4px); /* Subtle lift effect */
+  filter: none !important;
 }
 
 .team-member h3 {
@@ -455,4 +455,283 @@ img {
   .hero h1 {
     font-size: 2.5rem;
   }
+}
+header, .navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  
+  /* Give the navbar its light cream background */
+  background-color: #f4f0eb; 
+  padding: 1rem 5%;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Make logo dark and visible */
+.logo {
+  color: #1a1a1a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Make nav links dark */
+.nav-links a {
+  color: #333333;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 1rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #a38252; /* Gold active indicator */
+}
+
+/* Login Button styling */
+.login-btn {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+/* Navigation Links Container */
+.nav-links a {
+  position: relative;
+  color: #333333;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 1.2rem;
+  padding-bottom: 4px;
+}
+
+/* Active Page State (Gold Text + Gold Underline) */
+.nav-links a.active {
+  color: #a38252; /* Gold text */
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #a38252; /* Gold underline */
+  border-radius: 2px;
+}
+header, .navbar {
+  position: sticky; /* Keeps it pinned to the top on scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Keeps navbar above all other images and text */
+  
+  background-color: #f4f0eb; /* Navbar background color */
+  padding: 1rem 5%;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Optional soft shadow as you scroll */
+}
+/* SERVICES HERO & FILTERS */
+.services-hero {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  background-color: #faf8f5;
+}
+
+.services-hero h1 {
+  font-size: 2.8rem;
+  font-family: serif;
+  margin-bottom: 0.5rem;
+}
+
+.services-hero p {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.filter-btn {
+  background-color: #ffffff;
+  border: 1px solid #e2ded7;
+  padding: 0.5rem 1.4rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* SERVICES GRID */
+.services-section {
+  padding: 3rem 5%;
+  background-color: #faf8f5;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  position: relative;
+  height: 220px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #7a5c28;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.4rem;
+}
+
+.card-header h3 {
+  font-size: 1.15rem;
+  font-family: serif;
+}
+
+.price {
+  font-weight: bold;
+  color: #a38252;
+}
+
+.duration {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.8rem;
+}
+
+.description {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.book-btn {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.book-btn:hover {
+  opacity: 0.85;
+}
+
+/* NEWSLETTER */
+.newsletter-section {
+  padding: 4rem 5%;
+  background-color: #faf8f5;
+}
+
+.newsletter-card {
+  background-color: #f2ede6;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.newsletter-card h2 {
+  font-family: serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.newsletter-form button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
 }
