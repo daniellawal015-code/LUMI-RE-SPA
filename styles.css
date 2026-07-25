@@ -1385,3 +1385,23 @@ header, .navbar {
   font-weight: 600;
   text-decoration: none;
 }
+/* ALERT MESSAGES STYLES */
+.alert-box {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.alert-box.error {
+  background-color: #fde8e8;
+  color: #9b1c1c;
+  border: 1px solid #f8b4b4;
+}
+
+.alert-box.success {
+  background-color: #def7ec;
+  color: #03543f;
+  border: 1px solid #84e1bc;
+}
