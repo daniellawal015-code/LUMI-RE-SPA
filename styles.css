@@ -735,3 +735,217 @@ header, .navbar {
   border-radius: 20px;
   cursor: pointer;
 }
+/* BOOKING PAGE LAYOUT */
+.booking-container {
+  display: flex;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 5%;
+  background-color: #faf8f5;
+}
+
+.booking-main {
+  flex: 1;
+}
+
+/* STEP PROGRESS BAR */
+.steps-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 550px;
+  margin-bottom: 3rem;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e8e4de;
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.step.active .step-num {
+  background: #000000;
+  color: #ffffff;
+}
+
+.step span {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: #888;
+  font-weight: 600;
+}
+
+.step.active span {
+  color: #000;
+}
+
+.step-line {
+  flex: 1;
+  height: 1px;
+  background: #d8d3cb;
+  margin: 0 10px;
+  margin-bottom: 1.2rem;
+}
+
+/* BOOKING HEADER */
+.booking-header h1 {
+  font-family: serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.booking-header p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+/* BOOKING GRID */
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.booking-card {
+  position: relative;
+  height: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.booking-card.card-wide {
+  grid-column: span 2;
+}
+
+.booking-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.booking-card:hover img {
+  transform: scale(1.04);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 1.2rem 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: #ffffff;
+}
+
+.card-overlay h3 {
+  font-size: 1.15rem;
+  font-family: serif;
+  margin-bottom: 0.2rem;
+}
+
+.card-overlay p {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+/* SIDEBAR SUMMARY */
+.booking-sidebar {
+  width: 320px;
+}
+
+.sidebar-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid #eae6df;
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-header h3 {
+  font-family: serif;
+  font-size: 1.1rem;
+}
+
+.sidebar-header p {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.sidebar-steps {
+  list-style: none;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar-steps li {
+  font-size: 0.85rem;
+  color: #888;
+  padding: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sidebar-steps li.active {
+  color: #a38252;
+  font-weight: 600;
+}
+
+.empty-state-box {
+  border: 1.5px dashed #dcd6cd;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: #777;
+}
+
+.empty-state-box .bag-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-box p {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.confirm-btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: #e5e2dd;
+  color: #999;
+  font-weight: 600;
+  cursor: not-allowed;
+}

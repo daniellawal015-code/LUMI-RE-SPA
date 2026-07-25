@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière Spa - Book Appointment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <a href="index.html" class="logo">LUMIÈRE SPA</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="book.html" class="active">Book</a>
+    </nav>
+    <a href="login.html" class="login-btn">Login</a>
+  </header>
+
+  <main class="booking-container">
+    <!-- LEFT SIDE: STEPS & SERVICE SELECTION -->
+    <div class="booking-main">
+      
+      <!-- STEP PROGRESS BAR -->
+      <div class="steps-bar">
+        <div class="step active">
+          <div class="step-num">1</div>
+          <span>SERVICES</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <span>TIME</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <span>DETAILS</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <span>CONFIRM</span>
+        </div>
+      </div>
+
+      <!-- HEADING -->
+      <div class="booking-header">
+        <h1>Select your sanctuary</h1>
+        <p>Each treatment is a bespoke experience tailored to your unique biology and sensory needs.</p>
+      </div>
+
+      <!-- CARDS GRID -->
+      <div class="booking-grid">
+        
+        <div class="booking-card">
+          <img src="image/massage.png" alt="Therapeutic Massage">
+          <div class="card-overlay">
+            <h3>Therapeutic Massage</h3>
+            <p>From $120 • 60-90 min</p>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <img src="image/spa.png" alt="Skin Rituals">
+          <div class="card-overlay">
+            <h3>Skin Rituals</h3>
+            <p>From $95 • 45-75 min</p>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <img src="image/nails.png" alt="Manicure & Pedicure">
+          <div class="card-overlay">
+            <h3>Manicure & Pedicure</h3>
+            <p>From $65 • 45 min</p>
+          </div>
+        </div>
+
+        <div class="booking-card card-wide">
+          <img src="image/hair.png" alt="Hair Artistry">
+          <div class="card-overlay">
+            <h3>Hair Artistry</h3>
+            <p>Consultation Required • 60+ min</p>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <img src="image/bottles.png" alt="Wellness Retreats">
+          <div class="card-overlay">
+            <h3>Wellness Retreats</h3>
+            <p>Custom Packages • Full Day</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR: SUMMARY -->
+    <aside class="booking-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-header">
+          <span class="icon">📋</span>
+          <div>
+            <h3>Your Selection</h3>
+            <p>Premium Experience</p>
+          </div>
+        </div>
+
+        <ul class="sidebar-steps">
+          <li class="active"><span>📋</span> Summary</li>
+          <li><span>📅</span> Details</li>
+          <li><span>💳</span> Payment</li>
+          <li><span>✔</span> Confirm</li>
+        </ul>
+
+        <div class="empty-state-box">
+          <span class="bag-icon">🛍</span>
+          <p>Select a service to begin your journey.</p>
+        </div>
+
+        <button class="confirm-btn" disabled>Confirm Booking</button>
+      </div>
+    </aside>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2 class="footer-logo">LUMIÈRE SPA</h2>
+        <p>Curated wellness for the modern soul. High-end treatments, timeless results.</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4>EXPLORE</h4>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>LEGAL</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2024 Lumière Spa & Salon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
